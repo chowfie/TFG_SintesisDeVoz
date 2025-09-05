@@ -1,3 +1,49 @@
+# ============================================================
+# CÓMO EJECUTAR (ejemplos)
+# ------------------------------------------------------------
+#
+# Windows (PowerShell/CMD) — Common Voice (ES):
+#   python .\<este_archivo>.py ^
+#       --root "C:\datasets\CommonVoice_ES_1000" ^
+#       --out_dir ".\latent_out\xtts_embeddings" ^
+#       --exts ".wav,.flac,.mp3" ^
+#       --min_seconds 1.5 ^
+#       --max_utts_per_spk 10 ^
+#       --corpus_name "CommonVoice-ES" ^
+#       --save_gpt_latent
+#
+# Windows — VCTK:
+#   python .\<este_archivo>.py ^
+#       --root "C:\datasets\VCTK-Corpus-0.92\wav48" ^
+#       --out_dir ".\latent_out\vctk_xtts" ^
+#       --exts ".wav" ^
+#       --max_utts_per_spk 12 ^
+#       --corpus_name "VCTK"
+#
+# Windows — LibriTTS-R:
+#   python .\<este_archivo>.py ^
+#       --root "C:\datasets\LibriTTS_R" ^
+#       --out_dir ".\latent_out\librittsr_xtts" ^
+#       --exts ".wav,.flac" ^
+#       --max_utts_per_spk 8 ^
+#       --corpus_name "LibriTTS-R"
+#
+# Linux/macOS/WSL — Common Voice (ES):
+#   python3 ./<este_archivo>.py \
+#       --root "/datasets/CommonVoice_ES_1000" \
+#       --out_dir "./latent_out/xtts_embeddings" \
+#       --exts ".wav,.flac,.mp3" \
+#       --min_seconds 1.5 \
+#       --max_utts_per_spk 10 \
+#       --corpus_name "CommonVoice-ES" \
+#       --save_gpt_latent
+#
+# Salidas:
+#   <out_dir>/embeddings_xtts_per_utterance.csv
+#   <out_dir>/embeddings_xtts_per_speaker.csv
+#
+# ============================================================
+
 import argparse
 import csv
 import sys

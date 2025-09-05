@@ -1,3 +1,5 @@
+# python tts_bucle_train.py
+
 import torch
 from TTS.api import TTS
 from TTS.tts.utils.managers import EmbeddingManager
@@ -47,7 +49,7 @@ def convert_flac_to_wav(flac_path, out_dir):
 # -------------------------------
 # Set Paths
 USE_CUDA = torch.cuda.is_available()
-OUTPUT_BASE_DIR = "output_results_vctk"
+OUTPUT_BASE_DIR = "output_results_vctk2"
 # Local paths to encoder model
 ENCODER_MODEL_PATH = "https://github.com/coqui-ai/TTS/releases/download/speaker_encoder_model/model_se.pth.tar"
 ENCODER_CONFIG_PATH = "https://github.com/coqui-ai/TTS/releases/download/speaker_encoder_model/config_se.json"
@@ -78,9 +80,9 @@ synthesizer.to("cuda" if USE_CUDA else "cpu")
 # LOAD SPEAKER AUDIOS
 # -------------------------------
 print("\nLoading audios...")
-AUDIOS_BASE_PATH = r"C:\Users\sreal\Desktop\TFG\CODIGO\VCTK-Corpus-0.92\wav48_silence_trimmed"
+AUDIOS_BASE_PATH = r"C:\Users\sreal\Desktop\TFG\CODIGO\datasets\VCTK-Corpus-0.92\wav48_silence_trimmed"
 # For VCTK audios, select a speaker
-SELECTED_SPEAKER = "p225"
+SELECTED_SPEAKER = "p256"
 print(f"\nSearching in folder: {AUDIOS_BASE_PATH}\\{SELECTED_SPEAKER}")
 
 speaker_folder = os.path.join(AUDIOS_BASE_PATH, SELECTED_SPEAKER)

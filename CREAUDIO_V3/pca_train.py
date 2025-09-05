@@ -1,3 +1,28 @@
+# ============================================================
+# CÓMO EJECUTAR (ejemplo)
+# ------------------------------------------------------------
+# Este script entrena un PCA sobre embeddings por locutor (e0..eN),
+# guarda scaler y modelo, y exporta las coordenadas z1..zk.
+#
+# Windows (PowerShell/CMD):
+#   python .\<este_archivo>.py ^
+#       --csv "C:\Users\sreal\Desktop\TFG\CODIGO\CREAUDIO_V3\merged_all\merged_per_speaker.csv" ^
+#       --out_dir ".\pca_xtts_k64" ^
+#       --n_components 64
+#
+# Linux / macOS / WSL:
+#   python3 ./<este_archivo>.py \
+#       --csv "./merged_all/merged_per_speaker.csv" \
+#       --out_dir "./pca_xtts_k64" \
+#       --n_components 64
+#
+# Salidas (en --out_dir):
+#   - scaler.joblib
+#   - pca.joblib
+#   - pca_coordinates.csv   (columnas: corpus?, speaker_id?, z1..zk)
+# ============================================================
+
+
 import argparse
 from pathlib import Path
 import numpy as np

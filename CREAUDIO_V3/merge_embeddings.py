@@ -1,3 +1,5 @@
+# python merge_embeddings.py
+
 import pandas as pd
 from pathlib import Path
 import re
